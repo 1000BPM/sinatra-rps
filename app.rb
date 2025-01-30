@@ -34,9 +34,43 @@ get("/rock") do
 end
 
 get("/paper") do
+  @we_choice = "paper"
 
+  choices = ["rock","paper","scissors"]
+
+  @they_choice = choices.sample
+
+  #Rule logic
+  
+    if @they_choice == "paper"
+      @outcome = "We tied!"
+    elsif @they_choice == "scissors"
+      @outcome = "We lost!"
+    else
+      @outcome = "We won!"
+    
+    end
+
+  erb(:rock)
 end
 
 get("/scissors") do
+  @we_choice = "scissors"
 
+  choices = ["rock","paper","scissors"]
+
+  @they_choice = choices.sample
+
+  #Rule logic
+  
+    if @they_choice == "scissors"
+      @outcome = "We tied!"
+    elsif @they_choice == "rock"
+      @outcome = "We lost!"
+    else
+      @outcome = "We won!"
+    
+    end
+
+  erb(:rock)
 end
